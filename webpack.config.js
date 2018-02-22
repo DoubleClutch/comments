@@ -10,14 +10,24 @@ module.exports = {
     path: DIST_DIR,
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js?/,
+        test: /\.jsx?/,
         include: SRC_DIR,
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015'],
         },
+      },
+      {
+        test: /\.scss$$/,
+        use: [{
+          loader: 'style-loader', // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS
+        }, {
+          loader: 'sass-loader', // compiles Sass to CSS
+        }],
       },
     ],
   },
