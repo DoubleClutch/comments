@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from './comment';
 
 class Comments extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class Comments extends React.Component {
   }
 
   render() {
-    return (<div>Comments!!!</div>);
+    return (<Comment />);
   }
 }
 
