@@ -140,21 +140,26 @@ module.exports.user = [
   {
     id: 1,
     name: 'jest',
+    profile_photo: 'http://imgur.com/EMkYAVw.jpg',
   },
   {
     id: 2,
     name: 'koa',
+    profile_photo: 'http://imgur.com/v3ocr9F.jpg',
   },
   {
     id: 3,
     name: 'ron',
+    profile_photo: 'http://imgur.com/lCDjrrC.jpg',
   },
   {
     id: 4,
     name: 'posey',
+    profile_photo: 'http://imgur.com/UCGBBCF.jpg',
   },
   {
     id: 5,
     name: 'wade',
+    profile_photo: 'http://imgur.com/gliKr8k.jpg',
   },
 ];
