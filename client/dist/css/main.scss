@@ -1,0 +1,73 @@
+.comments {
+  // width: 500px;
+  // height: auto;
+  // border: 2px solid black;
+  overflow: hidden;
+}
+
+.comment {
+  margin: 10px;
+  width: 500px;
+  // height: 150px;
+  // border: 2px solid black;
+}
+
+.commentUserPhoto img{
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  // border: 2px solid black;
+  float: left;
+}
+
+.commentUserName {
+  margin-left: 10px;
+  margin-top: 25px;
+  // border: 2px solid black;
+  float: left;
+}
+
+.commentUserMessage {
+  margin: 10px;
+  margin-left: 100px;
+  padding-bottom: 30px;
+  border-radius: 25px;
+  // border: 2px solid black;
+  clear: left;
+}
+
+.reply {
+  margin: 10px;
+  margin-left: 30px;
+  width: 400px;
+  // height: 150px;
+  background-color: rgba(43,96,255,0.15);
+  border: 2px solid rgba(43,96,255,0.15);
+  // float: right;
+}
+
+.replyUserPhoto img{
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  // border: 2px solid black;
+  float: left;
+}
+
+.replyUserName {
+  margin-left: 10px;
+  margin-top: 25px;
+  // border: 2px solid black;
+  float: left;
+}
+
+.replyUserMessage {
+  margin: 10px;
+  margin-left: 100px;
+  padding-bottom: 30px;
+  border-radius: 25px;
+  // border: 2px solid black;
+  clear: left;
+}

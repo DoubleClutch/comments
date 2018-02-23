@@ -26,5 +26,17 @@ const seedUserDB = (data) => {
   }
 };
 
+const seedReplyDB = (data) => {
+  for (let i = 0; i < data.length; i += 1) {
+    Database.insertOneReply(data[i], (error, info) => {
+      if (error) {
+        console.log(error);
+      }
+      console.log(info, 'Data successly stored');
+    });
+  }
+};
+
 seedCommentDB(SeedData.comments);
 seedUserDB(SeedData.user);
+seedReplyDB(SeedData.replies);
