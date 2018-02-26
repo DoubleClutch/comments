@@ -1,8 +1,8 @@
 import React from 'react';
+import shallow from 'enzyme';
 import Comments from '../client/src/components/comments';
 import Comment from '../client/src/components/comment';
 import Reply from '../client/src/components/reply';
-
 
 describe('Render test', () => {
   it('Comments component should render a Comment component', () => {
