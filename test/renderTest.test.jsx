@@ -1,5 +1,5 @@
 import React from 'react';
-import shallow from 'enzyme';
+import { shallow } from 'enzyme';
 import Comments from '../client/src/components/comments';
 import Comment from '../client/src/components/comment';
 import Reply from '../client/src/components/reply';
