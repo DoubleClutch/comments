@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/comments');
+
+mongoose.Promise = Promise;
+
 const commentsSchema = mongoose.Schema({
   id: {
     type: Number,
@@ -46,6 +50,10 @@ const insertOneReply = (reply, callback) => {
   replyModel.create(reply, callback);
 };
 
+const findCommentForProduct = productId => commentsModel.find({ id: productId }).exec();
+
+
 module.exports.insertOneComment = insertOneComment;
 module.exports.insertOneUser = insertOneUser;
 module.exports.insertOneReply = insertOneReply;
+module.exports.findCommentForProduct = findCommentForProduct;
