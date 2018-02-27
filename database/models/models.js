@@ -10,7 +10,7 @@ const commentsSchema = mongoose.Schema({
     unique: true,
   },
   message: String,
-  date: String,
+  date: Date,
   product_id: Number,
   user_id: Number,
 });
@@ -30,7 +30,7 @@ const replySchema = mongoose.Schema({
     unique: true,
   },
   message: String,
-  date: String,
+  date: Date,
   parentCommentId: Number,
 });
 
@@ -50,7 +50,7 @@ const insertOneReply = (reply, callback) => {
   replyModel.create(reply, callback);
 };
 
-const findCommentForProduct = productId => commentsModel.find({ id: productId }).exec();
+const findCommentForProduct = productId => commentsModel.find({ product_id: productId }).exec();
 
 
 module.exports.insertOneComment = insertOneComment;
