@@ -28,6 +28,13 @@
   float: left;
 }
 
+.commentTimeCreated {
+  margin-left: 20px;
+  margin-top: 25px;
+  // border: 2px solid black;
+  float: left;
+}
+
 .commentUserMessage {
   margin: 10px;
   margin-left: 100px;
@@ -58,6 +65,13 @@
 
 .replyUserName {
   margin-left: 10px;
+  margin-top: 25px;
+  // border: 2px solid black;
+  float: left;
+}
+
+.replyTimeCreated {
+  margin-left: 20px;
   margin-top: 25px;
   // border: 2px solid black;
   float: left;
