@@ -1,6 +1,6 @@
 const faker = require('faker');
+faker.locale = 'en_US';
 
-// const SeedData = require('./seed_data.js');
 const mongoose = require('mongoose');
 const Database = require('./database/models/models.js');
 
@@ -58,42 +58,3 @@ const seedReplyDB = () => {
 
 seedCommentDB();
 seedReplyDB();
-
-// const seedCommentDB = (data) => {
-//   for (let i = 0; i < data.length; i += 1) {
-//     Database.insertOneComment(data[i], (error, info) => {
-//       if (error) {
-//         console.log(error);
-//       }
-//       console.log(info, 'Data successly stored!');
-//     });
-//   }
-// };
-//
-// const seedUserDB = (data) => {
-//   for (let i = 0; i < data.length; i += 1) {
-//     Database.insertOneUser(data[i], (error, info) => {
-//       if (error) {
-//         console.log(error);
-//       }
-//       console.log(info, 'Data successly stored');
-//     });
-//   }
-// };
-//
-// const seedReplyDB = (data) => {
-//   for (let i = 0; i < data.length; i += 1) {
-//     Database.insertOneReply(data[i], (error, info) => {
-//       if (error) {
-//         console.log(error);
-//       }
-//       console.log(info, 'Data successly stored');
-//     });
-//   }
-// };
-
-// seedCommentDB(SeedData.comments);
-// seedUserDB(SeedData.user);
-// seedReplyDB(SeedData.replies);
-
-// mongoose.disconnect();
