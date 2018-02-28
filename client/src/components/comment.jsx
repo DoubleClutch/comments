@@ -2,7 +2,7 @@ import React from 'react';
 import Reply from './reply';
 
 class Comment extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
 
@@ -11,18 +11,24 @@ class Comment extends React.Component {
 
   render() {
     return (
-      <div className="comments">
-        <div className="comment">
-          <div className="commentUserPhoto">
-            <img src="http://imgur.com/EMkYAVw.jpg" alt="random face" />
-          </div>
-          <div className="commentUserName">Michael</div>
-          <div className="commentTimeCreated">about 15 hours ago</div>
-          <div className="commentUserMessage">This Product is good!!!</div>
-        </div>
-        <div className="replies">
-          <Reply />
-        </div>
+      <div>
+        {this.props.comments.map((item, index) => {
+          return (
+            <div className="comments" key={index}>
+              <div className="comment">
+                <div className="commentUserPhoto">
+                  <img src={item.profile_photo} alt="random face" />
+                </div>
+                <div className="commentUserName">{item.name}</div>
+                <div className="commentTimeCreated">{item.date}</div>
+                <div className="commentUserMessage">{item.message}</div>
+              </div>
+              <div className="replies">
+                <Reply commentId={item.id} />
+              </div>
+            </div>
+          );
+        })}
       </div>
     );
   }

@@ -54,10 +54,12 @@ const insertOneReply = (reply, callback) => {
   replyModel.create(reply, callback);
 };
 
-const findCommentForProduct = productId => commentsModel.find({ product_id: productId }).exec();
+const findCommentForProduct = productId => commentsModel.find({ product_id: productId }).sort({ id: -1 }).exec();
+const findReplyForComment = commentId => replyModel.find({ parentCommentId: commentId }).exec();
 
 
 module.exports.insertOneComment = insertOneComment;
 module.exports.insertOneUser = insertOneUser;
 module.exports.insertOneReply = insertOneReply;
 module.exports.findCommentForProduct = findCommentForProduct;
+module.exports.findReplyForComment = findReplyForComment;
