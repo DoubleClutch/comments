@@ -10,6 +10,10 @@ router.get('/comments/:id', async (ctx) => {
   ctx.body = await Database.findCommentForProduct(ctx.params.id);
 });
 
+router.get('/replies/:id', async (ctx) => {
+  ctx.body = await Database.findReplyForComment(ctx.params.id);
+});
+
 app.use(router.routes()).use(router.allowedMethods());
 
 app.use(serve({ rootDir: './client/dist' }));
