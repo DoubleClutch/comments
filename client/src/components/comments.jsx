@@ -6,7 +6,8 @@ class Comments extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      comments: [],
+      status: 'loading',
+      comments: []
     };
   }
 
@@ -35,12 +36,21 @@ class Comments extends React.Component {
 
   storeComments(data) {
     this.setState({
+      status: 'done',
       comments: data,
     });
   }
 
   render() {
-    return (<Comment comments={this.state.comments} />);
+    return (
+      <div>
+        {this.state.status === 'loading' ? (
+          <div>loading</div>
+        ) : (
+          <Comment comments={this.state.comments} />
+        )}
+      </div>
+    );
   }
 }
 
