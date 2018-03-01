@@ -40,21 +40,41 @@ class Comment extends React.Component {
           const itemDate = new Date(item.date);
           const diffMessage = this.timeDiff(curDate, itemDate);
 
-          return (
-            <div className="comments" key={index}>
-              <div className="comment">
-                <div className="commentUserPhoto">
-                  <img src={item.profile_photo} alt="random face" />
+          if (item.user_role !== '') {
+            return (
+              <div className="comments" key={index}>
+                <div className="comment">
+                  <div className="commentUserPhoto">
+                    <img src={item.profile_photo} alt="random face" />
+                  </div>
+                  <div className="commentUserName">{item.name}</div>
+                  <div className="commentUserRole">{item.user_role}</div>
+                  <div className="commentTimeCreated">{diffMessage}</div>
+                  <div className="commentUserMessage">{item.message}</div>
                 </div>
-                <div className="commentUserName">{item.name}</div>
-                <div className="commentTimeCreated">{diffMessage}</div>
-                <div className="commentUserMessage">{item.message}</div>
+                <div className="replies">
+                  <Reply commentId={item.id} />
+                </div>
               </div>
-              <div className="replies">
-                <Reply commentId={item.id} />
+            );
+          } else {
+            return (
+              <div className="comments" key={index}>
+                <div className="comment">
+                  <div className="commentUserPhoto">
+                    <img src={item.profile_photo} alt="random face" />
+                  </div>
+                  <div className="commentUserName">{item.name}</div>
+                  <div className="commentTimeCreated">{diffMessage}</div>
+                  <div className="commentUserMessage">{item.message}</div>
+                </div>
+                <div className="replies">
+                  <Reply commentId={item.id} />
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
+
         })}
       </div>
     );

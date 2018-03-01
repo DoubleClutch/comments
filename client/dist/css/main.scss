@@ -7,7 +7,7 @@
 
 .comment {
   margin: 10px;
-  width: 500px;
+  width: 700px;
   // height: 150px;
   // border: 2px solid black;
 }
@@ -26,6 +26,17 @@
   margin-top: 25px;
   // border: 2px solid black;
   float: left;
+}
+
+.commentUserRole {
+  width: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 15px;
+  float: left;
+  background-color: blue;
+  color: white;
 }
 
 .commentTimeCreated {
@@ -47,7 +58,7 @@
 .reply {
   margin: 10px;
   margin-left: 30px;
-  width: 400px;
+  width: 700px;
   // height: 150px;
   background-color: rgba(43,96,255,0.15);
   border: 2px solid rgba(43,96,255,0.15);
@@ -68,6 +79,17 @@
   margin-top: 25px;
   // border: 2px solid black;
   float: left;
+}
+
+.replyUserRole {
+  width: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 15px;
+  float: left;
+  background-color: green;
+  color: white;
 }
 
 .replyTimeCreated {

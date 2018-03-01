@@ -62,16 +62,31 @@ class Reply extends React.Component {
           const itemDate = new Date(item.date);
           const diffMessage = this.timeDiff(curDate, itemDate);
 
-          return (
-            <div className="reply" key={index}>
-              <div className="replyUserPhoto">
-                <img src={item.profile_photo} alt="random face" />
+          if (item.user_role !== '') {
+            return (
+              <div className="reply" key={index}>
+                <div className="replyUserPhoto">
+                  <img src={item.profile_photo} alt="random face" />
+                </div>
+                <div className="replyUserName">{item.name}</div>
+                <div className="replyUserRole">{item.user_role}</div>
+                <div className="replyTimeCreated">{diffMessage}</div>
+                <div className="replyUserMessage">{item.message}</div>
               </div>
-              <div className="replyUserName">{item.name}</div>
-              <div className="replyTimeCreated">{diffMessage}</div>
-              <div className="replyUserMessage">{item.message}</div>
-            </div>
-          );
+            );
+          } else {
+            return (
+              <div className="reply" key={index}>
+                <div className="replyUserPhoto">
+                  <img src={item.profile_photo} alt="random face" />
+                </div>
+                <div className="replyUserName">{item.name}</div>
+                <div className="replyTimeCreated">{diffMessage}</div>
+                <div className="replyUserMessage">{item.message}</div>
+              </div>
+            );
+          }
+
         })}
       </div>
     );
