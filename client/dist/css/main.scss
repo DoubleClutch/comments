@@ -107,3 +107,18 @@
   // border: 2px solid black;
   clear: left;
 }
+
+.showMore {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  color: blue;
+  transition: background-color 0.3s ease;
+  background-color: #F5F5F5;
+}
+
+.showMore:hover {
+  color: white;
+  background-color: blue;
+}

@@ -1,12 +1,18 @@
+/*eslint-disable*/
 import React from 'react';
 import Reply from './reply';
 
 class Comment extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
-
+      start: 0,
+      end: 0
     };
+  }
+
+  componentWillMount() {
+    this.handleShowMore();
   }
 
   timeDiff(curDate, itemDate) {
@@ -32,10 +38,22 @@ class Comment extends React.Component {
     return diffMessage;
   }
 
+  handleShowMore() {
+    if (this.state.end + 5 > this.props.comments.length) {
+      this.setState({
+        end: this.props.comments.length
+      });
+    } else {
+      this.setState({
+        end: this.state.end + 5
+      });
+    }
+  }
+
   render() {
     return (
       <div>
-        {this.props.comments.map((item, index) => {
+        {this.props.comments.slice(this.state.start, this.state.end).map((item, index) => {
           const curDate = new Date();
           const itemDate = new Date(item.date);
           const diffMessage = this.timeDiff(curDate, itemDate);
@@ -76,6 +94,9 @@ class Comment extends React.Component {
           }
 
         })}
+        {this.state.end !== this.props.comments.length &&
+          <div className="showMore" onClick={this.handleShowMore.bind(this)}>Show more comments</div>
+        }
       </div>
     );
   }
