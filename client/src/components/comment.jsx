@@ -3,10 +3,15 @@ import Reply from './reply';
 
 class Comment extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
-
+      start: 0,
+      end: 0
     };
+  }
+
+  componentWillMount() {
+    this.handleShowMore();
   }
 
   timeDiff(curDate, itemDate) {
@@ -17,25 +22,37 @@ class Comment extends React.Component {
     const diffMin = Math.floor(Math.abs(curDate.getMinutes() - itemDate.getMinutes()));
     let diffMessage = '';
 
-    if (diffYear >= 1) {
+    if (diffYear > 1) {
       diffMessage = `about ${diffYear} years ago`;
-    } else if (diffMonth >= 1 && diffMonth < 12) {
+    } else if (diffMonth > 1 && diffMonth <= 12) {
       diffMessage = `about ${diffMonth} months ago`;
-    } else if (diffDay >= 1 && diffDay < 30) {
+    } else if (diffDay > 1 && diffDay <= 30) {
       diffMessage = `about ${diffDay} days ago`;
-    } else if (diffHour >= 1 && diffHour < 24) {
+    } else if (diffHour > 1 && diffHour <= 24) {
       diffMessage = `about ${diffHour} hours ago`;
-    } else if (diffMin > 1 && diffMin < 60) {
+    } else if (diffMin > 1 && diffMin <= 60) {
       diffMessage = `about ${diffMin} minutes ago`;
     }
 
     return diffMessage;
   }
 
+  handleShowMore() {
+    if (this.state.end + 5 > this.props.comments.length) {
+      this.setState({
+        end: this.props.comments.length
+      });
+    } else {
+      this.setState({
+        end: this.state.end + 5
+      });
+    }
+  }
+
   render() {
     return (
       <div>
-        {this.props.comments.map((item, index) => {
+        {this.props.comments.slice(this.state.start, this.state.end).map((item, index) => {
           const curDate = new Date();
           const itemDate = new Date(item.date);
           const diffMessage = this.timeDiff(curDate, itemDate);
@@ -76,6 +93,9 @@ class Comment extends React.Component {
           }
 
         })}
+        {this.state.end !== this.props.comments.length &&
+          <div className="showMore" onClick={this.handleShowMore.bind(this)}>Show more comments</div>
+        }
       </div>
     );
   }
