@@ -14,7 +14,7 @@
 
   <script>
     ReactDOM.render(
-      React.createElement(Comments),
+      React.createElement(Comments, {id: window.location.pathname.slice(1, window.location.pathname.length - 1)}),
       document.getElementById('comments')
     );
   </script>

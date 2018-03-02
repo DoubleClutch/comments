@@ -4,7 +4,7 @@ import Comment from './comment';
 
 class Comments extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       comments: [],
     };
