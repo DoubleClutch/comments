@@ -8,7 +8,7 @@
 .comment {
   margin: 10px;
   width: 700px;
-  // height: 150px;
+  height: auto;
   // border: 2px solid black;
 }
 
@@ -49,20 +49,73 @@
 .commentUserMessage {
   margin: 10px;
   margin-left: 100px;
-  padding-bottom: 30px;
   border-radius: 25px;
   // border: 2px solid black;
   clear: left;
+}
+
+.commentLikeButton {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  margin: 10px;
+  margin-left: 100px;
+  padding: 10px;
+  color: grey;
+  float: left;
+  cursor: pointer;
+}
+
+.commentLikeButtonClicked {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  margin: 10px;
+  margin-left: 100px;
+  padding: 10px;
+  float: left;
+  cursor: pointer;
+}
+
+.commentLikeButton:hover {
+  background-color: #F5F5F5;
+  color: black;
+}
+
+.commentDislikeButton {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  margin: 10px;
+  padding: 10px;
+  color: grey;
+  float: left;
+  cursor: pointer;
+}
+
+.commentDislikeButtonClicked {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+  cursor: pointer;
+}
+
+.commentDislikeButton:hover {
+  background-color: #F5F5F5;
+  color: black;
 }
 
 .reply {
   margin: 10px;
   margin-left: 30px;
   width: 700px;
-  // height: 150px;
+  height: auto;
   background-color: rgba(43,96,255,0.15);
   border: 2px solid rgba(43,96,255,0.15);
-  // float: right;
+  float: left;
 }
 
 .replyUserPhoto img{
@@ -102,7 +155,6 @@
 .replyUserMessage {
   margin: 10px;
   margin-left: 100px;
-  padding-bottom: 30px;
   border-radius: 25px;
   // border: 2px solid black;
   clear: left;
@@ -116,9 +168,22 @@
   color: blue;
   transition: background-color 0.3s ease;
   background-color: #F5F5F5;
+  cursor: pointer;
 }
 
 .showMore:hover {
   color: white;
   background-color: blue;
+}
+
+.likeWord {
+  margin-left: 10px;
+  float: left;
+}
+
+.thumbs {
+  max-width: 20px;
+  max-height: 20px;
+  margin-left: 10px;
+  float: left;
 }
