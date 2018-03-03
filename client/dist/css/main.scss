@@ -187,3 +187,64 @@
   margin-left: 10px;
   float: left;
 }
+
+.replyBlock {
+  float: right;
+  clear: left;
+}
+
+.replyBlock textarea {
+  min-height: 20px;
+  width: 400px;
+  resize: none;
+  float: right;
+  border: 2px solid rgba(43,96,255,0.15);
+  border-radius: 10px;
+}
+
+.replyBlock textarea:focus {
+  outline: none;
+}
+
+.replyBlock button {
+  float: right;
+  padding: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
+  border: 1px solid rgba(43,96,255,0.15);
+  border-radius: 10px;
+}
+
+.replyButton {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  margin: 10px;
+  padding: 10px;
+  color: grey;
+  float: left;
+  cursor: pointer;
+}
+
+.replyButton:hover {
+  background-color: #F5F5F5;
+  color: black;
+}
+
+.replyTransition-enter {
+  transform: translate(100%);
+}
+
+.replyTransition-enter.replyTransition-enter-active {
+  transform: translate(0%);
+  transition: 200ms ease-in-out;
+}
+
+.replyTransition-leave {
+  transform: translate(0%);
+}
+
+.replyTransition-leave.replyTransition-leave-active {
+  transform: translate(-100%);
+  transition: 200ms ease-in-out;
+}
