@@ -7,7 +7,7 @@ class Comments extends React.Component {
     super(props);
     this.state = {
       status: 'loading',
-      comments: []
+      comments: [],
     };
   }
 
