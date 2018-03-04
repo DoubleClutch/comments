@@ -95,7 +95,7 @@ class Reply extends React.Component {
                 <img src={item.profile_photo} alt="random face" />
               </div>
               <div className="replyUserName">{item.name}</div>
-              {this.props.commentId.user_role !== '' &&
+              {item.user_role !== '' &&
                 <div className="replyUserRole">{item.user_role}</div>
               }
               <div className="replyTimeCreated">{diffMessage}</div>
