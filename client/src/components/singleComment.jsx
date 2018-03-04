@@ -1,10 +1,13 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReplyBlock from './replyBlock';
 
 class SingleComment extends React.Component {
   constructor(props) {
     super();
     this.state = {
       likeStatus: null,
+      replyVisibility: false,
     };
   }
 
@@ -47,6 +50,12 @@ class SingleComment extends React.Component {
         likeStatus: null,
       });
     }
+  }
+
+  toggleReply() {
+    this.setState({
+      replyVisibility: !this.state.replyVisibility,
+    });
   }
 
   render() {
@@ -98,6 +107,16 @@ class SingleComment extends React.Component {
               </div>
             </div>
           }
+          <div className="replyButton" onClick={this.toggleReply.bind(this)}>Reply</div>
+          <ReactCSSTransitionGroup
+            transitionName="replyTransition"
+            transitionEnterTimeout={200}
+            transitionLeaveTimeout={200}
+          >
+            {this.state.replyVisibility === true &&
+              <ReplyBlock />
+            }
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     );

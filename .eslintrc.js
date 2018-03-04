@@ -13,6 +13,7 @@ module.exports = {
     "import"
   ],
   "rules": {
-    "no-tabs": 0
+    "no-tabs": 0,
+    "react/jsx-filename-extension": ["error", {"extensions": [".js", ".jsx"]}]
   }
 };

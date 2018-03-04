@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReplyBlock from './replyBlock';
 
 class Reply extends React.Component {
   constructor(props) {
@@ -7,6 +9,7 @@ class Reply extends React.Component {
     this.state = {
       replies: [],
       likeStatus: null,
+      replyVisibility: false,
     };
   }
 
@@ -73,6 +76,12 @@ class Reply extends React.Component {
     }
   }
 
+  toggleReply() {
+    this.setState({
+      replyVisibility: !this.state.replyVisibility,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -123,6 +132,16 @@ class Reply extends React.Component {
                   </div>
                 </div>
               }
+              <div className="replyButton" onClick={this.toggleReply.bind(this)}>Reply</div>
+              <ReactCSSTransitionGroup
+                transitionName="replyTransition"
+                transitionEnterTimeout={200}
+                transitionLeaveTimeout={200}
+              >
+                {this.state.replyVisibility === true &&
+                  <ReplyBlock />
+                }
+              </ReactCSSTransitionGroup>
             </div>
           );
         })}
