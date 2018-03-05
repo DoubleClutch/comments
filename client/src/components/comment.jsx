@@ -2,6 +2,8 @@ import React from 'react';
 import SingleComment from './singleComment';
 import Reply from './reply';
 
+import '../../dist/css/comment.scss';
+
 class Comment extends React.Component {
   constructor(props) {
     super(props);
