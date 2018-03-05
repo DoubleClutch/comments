@@ -3,6 +3,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReplyBlock from './replyBlock';
 
 import '../../dist/css/singleComment.scss';
+import thumbsup from '../../dist/img/thumbsup.png';
+import thumbsdown from '../../dist/img/thumbsdown.png';
 
 class SingleComment extends React.Component {
   constructor(props) {
@@ -90,7 +92,7 @@ class SingleComment extends React.Component {
           {this.state.likeStatus === true &&
             <div>
               <div className="commentLikeButtonClicked" value={true} onClick={this.toggleLike.bind(this, true)}>
-                <img className="thumbs" src="./img/thumbsup.png" alt="thumbs" />
+                <img className="thumbs" src={thumbsup} alt="thumbs" />
                 <div className="likeWord">Like</div>
               </div>
               <div className="commentDislikeButton" value={false} onClick={this.toggleLike.bind(this, false)}>
@@ -104,7 +106,7 @@ class SingleComment extends React.Component {
                 <div>Like</div>
               </div>
               <div className="commentDislikeButtonClicked" value={false} onClick={this.toggleLike.bind(this, false)}>
-                <img className="thumbs" src="./img/thumbsdown.png" alt="thumbs" />
+                <img className="thumbs" src={thumbsdown} alt="thumbs" />
                 <div className="likeWord">Dislike</div>
               </div>
             </div>

@@ -29,6 +29,15 @@ module.exports = {
           loader: 'sass-loader', // compiles Sass to CSS
         }],
       },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            name: 'img/[hash]-[name].[ext]',
+          },
+        }],
+      },
     ],
   },
   resolve: {
