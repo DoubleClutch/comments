@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../dist/css/replyBlock.scss';
+
 class ReplyBlock extends React.Component {
   constructor() {
     super();

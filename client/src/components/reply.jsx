@@ -3,6 +3,8 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReplyBlock from './replyBlock';
 
+import '../../dist/css/reply.scss';
+
 class Reply extends React.Component {
   constructor(props) {
     super();

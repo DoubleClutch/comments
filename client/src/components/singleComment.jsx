@@ -2,6 +2,8 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReplyBlock from './replyBlock';
 
+import '../../dist/css/singleComment.scss';
+
 class SingleComment extends React.Component {
   constructor(props) {
     super();
