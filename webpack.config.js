@@ -39,6 +39,39 @@ module.exports = {
           },
         }],
       },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'application/font-woff',
+            name: 'fonts/[name].[ext]',
+          },
+        }],
+      },
+      {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'application/font-woff',
+            name: 'fonts/[name].[ext]',
+          },
+        }],
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'application/font-woff',
+            name: 'fonts/[name].[ext]',
+          },
+        }],
+      },
     ],
   },
   resolve: {
