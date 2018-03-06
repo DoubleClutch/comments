@@ -12,7 +12,7 @@ class Comments extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.id !== undefined) {
+    if (this.props.id !== '') {
       this.getComments(this.props.id);
     } else {
       this.getComments(1);
