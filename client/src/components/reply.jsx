@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReplyBlock from './replyBlock';
+import URL from '../../../deploy';
 
 import '../../dist/css/reply.scss';
 import thumbsup from '../../dist/img/thumbsup.png';
@@ -22,7 +23,7 @@ class Reply extends React.Component {
   }
 
   getReply(commentId) {
-    const fetchUrl = `http://127.0.0.1:3004/replies/${commentId}`;
+    const fetchUrl = `${URL.url}/replies/${commentId}`;
 
     axios.get(fetchUrl)
       .then((response) => {

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import Comment from './comment';
+import URL from '../../../deploy';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class Comments extends React.Component {
 
   getComments(productId) {
     if (this.props !== undefined) {
-      const fetchUrl = `http://127.0.0.1:3004/comments/${productId}`;
+      const fetchUrl = `${URL.url}/comments/${productId}`;
 
       axios.get(fetchUrl)
         .then((response) => {
