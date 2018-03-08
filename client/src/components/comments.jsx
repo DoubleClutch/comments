@@ -3,6 +3,8 @@ import React from 'react';
 import Comment from './comment';
 import URL from '../../../deploy';
 
+require('dotenv').config();
+
 class Comments extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +24,7 @@ class Comments extends React.Component {
 
   getComments(productId) {
     if (this.props !== undefined) {
+      // const fetchUrl = `${process.env.URL}/comments/${productId}`;
       const fetchUrl = `${URL.url}/comments/${productId}`;
 
       axios.get(fetchUrl)

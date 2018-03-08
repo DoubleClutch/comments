@@ -4,6 +4,9 @@ faker.locale = 'en_US';
 const mongoose = require('mongoose');
 const Database = require('./database/models/models.js');
 
+require('dotenv').config();
+
+// mongoose.connect(process.env.DBURL);
 mongoose.connect('mongodb://localhost/comments');
 
 const roleArray = ['', '', '', 'Superbacker', '1-time creator', 'project creator']
