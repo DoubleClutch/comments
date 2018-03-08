@@ -23,6 +23,7 @@ class Reply extends React.Component {
   }
 
   getReply(commentId) {
+    // const fetchUrl = `${process.env.URL}/replies/${commentId}`;
     const fetchUrl = `${URL.url}/replies/${commentId}`;
 
     axios.get(fetchUrl)

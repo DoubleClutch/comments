@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+require('dotenv').config();
+
+// mongoose.connect(process.env.DBURL);
 mongoose.connect('mongodb://localhost/comments');
 
 mongoose.Promise = Promise;

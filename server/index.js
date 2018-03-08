@@ -4,6 +4,8 @@ const path = require('path');
 const cors = require('cors');
 const Database = require('../database/models/models');
 
+require('dotenv').config();
+
 const app = express();
 app.use(bodyparser.json());
 app.use(cors());
@@ -20,6 +22,9 @@ app.get('/replies/:id', (req, res) => {
     .then(result => res.send(result));
 });
 
+// app.listen(process.env.PORT, () => {
+//   console.log('Server listening on port 3004');
+// });
 
 app.listen(3004, () => {
   console.log('Server listening on port 3004');
