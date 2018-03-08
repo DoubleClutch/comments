@@ -11,7 +11,8 @@ const roleArray = ['', '', '', 'Superbacker', '1-time creator', 'project creator
 const seedCommentDB = () => {
   let projectId = 1;
   let productId = 1;
-  for (let i = productId; i <= 10; i += 1) {
+  let comments = [];
+  for (let i = productId; i <= 200; i += 1) {
     for (let j = 1; j <= 12; j += 1) {
       const obj = {
         id: projectId,
@@ -22,19 +23,24 @@ const seedCommentDB = () => {
         date: faker.date.past(),
         product_id: productId,
       };
+      comments.push(obj);
       projectId += 1;
-      Database.insertOneComment(obj, (error) => {
-        if (error) console.log(error);
-        else console.log('Data successly stored!');
-      });
     }
     productId += 1;
   }
+  Database.insertOneComment(comments)
+    .then(() => {
+      console.log('Data successly stored!');
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 };
 
 const seedReplyDB = () => {
   let projectId = 1;
   let productId = 1;
+  let reply = [];
   for (let i = productId; i <= 10; i += 1) {
     for (let j = 1; j <= 12; j += 1) {
       const obj = {
@@ -46,14 +52,19 @@ const seedReplyDB = () => {
         date: faker.date.past(),
         parentCommentId: projectId,
       };
+      reply.push(obj);
       projectId += 1;
-      Database.insertOneReply(obj, (error) => {
-        if (error) console.log(error);
-        else console.log('Data successly stored!');
-      });
     }
     productId += 1;
   }
+  Database.insertOneReply(reply)
+    .then(() => {
+      console.log('Data successly stored!');
+      mongoose.disconnect();
+    })
+    .catch((e) => {
+      console.log(e);
+    });
 };
 
 seedCommentDB();
