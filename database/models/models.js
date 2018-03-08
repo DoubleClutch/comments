@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/comments');
+// mongoose.connect('mongodb://localhost/comments');
 
 mongoose.Promise = Promise;
 
@@ -44,16 +44,16 @@ const commentsModel = mongoose.model('Comments', commentsSchema);
 const userModel = mongoose.model('User', userSchema);
 const replyModel = mongoose.model('Reply', replySchema);
 
-const insertOneComment = (comments, callback) => {
-  commentsModel.create(comments, callback);
+const insertOneComment = (comments) => {
+  return commentsModel.insertMany(comments);
 };
 
-const insertOneUser = (user, callback) => {
-  userModel.create(user, callback);
+const insertOneUser = (user) => {
+  return userModel.insertMany(user);
 };
 
-const insertOneReply = (reply, callback) => {
-  replyModel.create(reply, callback);
+const insertOneReply = (reply) => {
+  return replyModel.insertMany(reply);
 };
 
 const findCommentForProduct = productId => commentsModel.find({ product_id: productId }).sort({ id: -1 }).exec();
