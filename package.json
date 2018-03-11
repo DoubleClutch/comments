@@ -11,7 +11,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "seed-data":"node seed.js",
+    "seed-data": "node seed.js",
     "start": "npm run-script seed-data && npm run-script server"
   },
   "repository": {
