@@ -49,7 +49,7 @@ class Comments extends React.Component {
     return (
       <div>
         {this.state.status === 'loading' ? (
-          <div>loading</div>
+          <div className="loading">loading</div>
         ) : (
           <Comment comments={this.state.comments} />
         )}

@@ -11,7 +11,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "seed-data":"node seed.js",
+    "seed-data": "node seed.js",
     "start": "npm run-script seed-data && npm run-script server"
   },
   "repository": {
@@ -19,6 +19,9 @@
     "url": "git+https://github.com/DoubleClutch/comments.git"
   },
   "jest": {
+    "moduleNameMapper": {
+      "\\.(scss|png|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy"
+    },
     "setupFiles": [
       "./test/jestsetup.js"
     ],
